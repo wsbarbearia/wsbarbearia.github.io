@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barbearia WS | Corte e barba em Grajaú</title>
+<meta name="description" content="Barbearia WS em Grajaú, Maranhão. Corte e barba de segunda a sábado, das 8h às 20h. Marque seu horário pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0F11; --char:#2F3135; --silver:#C7CAD0; --white:#FFFFFF; --paper:#ECEDEF; --paper-text:#111214; --paper-muted:#55595F;
+  --line:rgba(255,255,255,.14); --pline:#CDD0D5;
+  --serif:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  --sans:"Montserrat","Segoe UI",Roboto,Arial,sans-serif;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#DADCE0}}
+:root[data-theme="dark"]{--paper:#DADCE0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--ink)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--white);font-family:var(--sans);font-size:18px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--silver);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1160px,100% - 44px);margin:0 auto}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--white);color:var(--ink);text-decoration:none;font-weight:500;font-size:18px;padding:15px 28px;border-radius:999px;border:2px solid var(--white);transition:background .25s,color .25s,transform .25s}
+.btn:hover{background:var(--silver);border-color:var(--silver);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:var(--white);color:var(--ink)}
+.paper .btn{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.paper .btn:hover{background:var(--char);border-color:var(--char)}
+.paper .btn.ghost{background:transparent;color:var(--paper-text);border-color:var(--paper-text)}
+.paper .btn.ghost:hover{background:var(--paper-text);color:var(--paper)}
+
+/* menu */
+.nav{position:sticky;top:0;z-index:20;background:rgba(14,15,17,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.mark{text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.mark b{font-family:"Bodoni Moda",Didot,"Times New Roman",serif;font-size:30px;font-weight:700;line-height:1}
+.mark span{font-size:13px;letter-spacing:.32em;color:var(--silver)}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:30px}
+.nav ul a{text-decoration:none;color:var(--silver);font-size:16px}
+.nav ul a:hover{color:var(--white)}
+.nav .btn{padding:10px 20px;font-size:16px}
+@media(min-width:860px){.nav ul{display:flex}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--char);padding:72px 0 64px}
+.hero::before{content:"";position:absolute;inset:-30% -20%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.11) 50%,transparent 58%);animation:sweep 8s ease-in-out infinite;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 76px);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0,transparent 70%);pointer-events:none}
+@keyframes sweep{0%,100%{transform:translateX(-35%)}50%{transform:translateX(35%)}}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:36px;align-items:center}
+@media(min-width:860px){.hero{padding:104px 0 88px}.hero .wrap{grid-template-columns:1.25fr .75fr}}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(46px,9.4vw,124px);line-height:1;margin:0 0 22px;letter-spacing:-.01em}
+.ln{display:block;overflow:hidden;padding-bottom:.06em}
+.ln>span{display:block;transform:translateY(108%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2)>span{animation-delay:.12s}.ln:nth-child(3)>span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.lead{max-width:34ch;font-size:clamp(18px,2vw,22px);color:var(--silver);margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.logo{width:min(100%,380px);height:auto;color:#F1F2F4;justify-self:center}
+.logo .draw{fill:none;stroke:currentColor;stroke-width:2.2;stroke-dasharray:var(--len,400);stroke-dashoffset:var(--len,400);animation:draw 1.8s ease-out .3s forwards}
+.logo .sc{fill:none;stroke:currentColor;stroke-width:1.8;opacity:0;animation:show .6s ease-out 1.6s forwards}
+.logo text{fill:currentColor}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes show{to{opacity:1}}
+.cut{position:relative;height:30px;margin-top:48px;color:var(--silver)}
+.cut::before{content:"";position:absolute;left:0;top:50%;width:0;border-top:2px dashed currentColor;animation:cutw 2.6s ease-in-out 1.2s forwards}
+.cut svg{position:absolute;top:0;left:0;width:34px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;animation:cutx 2.6s ease-in-out 1.2s forwards}
+@keyframes cutw{to{width:calc(100% - 30px)}}
+@keyframes cutx{to{left:calc(100% - 34px)}}
+
+/* faixa */
+.ticker{overflow:hidden;background:var(--ink);border-block:1px solid var(--line);padding:20px 0}
+.ticker div{display:flex;width:max-content;animation:tick 28s linear infinite}
+.ticker span{font-family:var(--serif);font-weight:700;font-size:clamp(30px,5vw,54px);padding:0 22px;white-space:nowrap}
+.ticker .o{color:transparent;-webkit-text-stroke:1.5px var(--silver)}
+.ticker i{align-self:center;width:9px;height:9px;border-radius:50%;background:var(--silver)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:84px 0}
+.paper{background:var(--paper);color:var(--paper-text)}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(36px,5.6vw,68px);line-height:1.05;margin:0 0 14px}
+.sub{max-width:44ch;color:var(--silver);margin:0 0 44px}
+.paper .sub{color:var(--paper-muted)}
+
+/* números */
+.stats{display:grid;gap:34px;margin-top:40px}
+@media(min-width:700px){.stats{grid-template-columns:repeat(3,1fr)}}
+.stat b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(64px,10vw,112px);line-height:1}
+.stat span{color:var(--paper-muted);font-size:17px}
+
+/* serviços */
+.panels{display:grid;gap:14px}
+.panel{position:relative;border:1px solid var(--line);border-radius:14px;padding:30px 28px;background:linear-gradient(160deg,#1B1D21,#131416);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;transition:background .4s,border-color .4s}
+.panel::after{content:"";position:absolute;top:0;bottom:0;width:60%;left:-80%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.1),transparent);transition:left .8s}
+.panel:hover{border-color:var(--silver)}
+.panel:hover::after{left:130%}
+.panel h3{font-family:var(--serif);font-weight:700;font-size:clamp(32px,4vw,46px);line-height:1.05;margin:0 0 8px}
+.panel p{margin:0;color:var(--silver);max-width:30ch}
+@media(min-width:860px){
+  .panels{display:flex;height:400px}
+  .panel{flex:1;transition:flex .5s cubic-bezier(.2,.8,.2,1),background .4s,border-color .4s}
+  .panels:hover .panel{flex:.7}.panels .panel:hover{flex:1.7}
+}
+.note{margin-top:20px;color:var(--silver);font-size:16px}
+
+/* diferenciais */
+.list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+@media(min-width:760px){.list{grid-template-columns:1fr 1fr;column-gap:56px}}
+.list li{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);font-size:20px}
+.list li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--silver)}
+
+/* visita */
+.visit{display:grid;gap:44px}
+@media(min-width:860px){.visit{grid-template-columns:1fr 1fr}}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 26px}
+.hours td{padding:14px 0;border-bottom:1px solid var(--pline)}
+.hours td:last-child{text-align:right;font-weight:500}
+.addr{font-size:22px;margin:0 0 4px}
+.muted{color:var(--paper-muted);margin:0}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+footer{background:var(--ink);color:var(--silver);padding:34px 0 120px;font-size:15px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+
+/* botão flutuante */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);text-decoration:none;font-weight:500;padding:14px 20px;border-radius:999px;box-shadow:0 8px 28px rgba(0,0,0,.45);transition:transform .25s}
+.fab:hover{transform:translateY(-3px)}
+.fab svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* aparecer ao rolar */
+.js [data-r]{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js [data-r].on{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .ln>span{transform:none}.logo .draw{stroke-dashoffset:0}.logo .sc{opacity:1}
+  .cut::before{width:calc(100% - 30px)}.cut svg{left:calc(100% - 34px)}
+  .js [data-r]{opacity:1;transform:none}
+}
+/* tipografia: títulos condensados e fortes */
+body{font-size:17px;line-height:1.7}
+h1,h2,.stat b,.ticker span,.panel h3{font-weight:400}
+h1{font-size:clamp(52px,13.5vw,104px);line-height:.92;letter-spacing:.01em}
+.ln{padding-bottom:.08em}
+h2{font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:.01em}
+.stat b{font-size:clamp(84px,13vw,140px);letter-spacing:.01em}
+.ticker span{font-size:clamp(40px,6vw,68px)}
+.panel h3{font-size:clamp(40px,5vw,58px);line-height:.95;letter-spacing:.01em}
+.list li{font-size:18px}
+.addr{font-size:20px;font-weight:500}
+.btn{font-weight:600;font-size:16px;letter-spacing:.01em}
+.nav .btn{font-size:15px}
+@media(min-width:860px){h1{font-size:clamp(60px,7.4vw,112px)}}
+.award{display:flex;align-items:center;gap:18px;background:var(--ink);color:var(--white);border-radius:14px;padding:22px 26px;margin-top:30px}
+.award svg{flex:none;width:44px;height:44px;fill:none;stroke:var(--silver);stroke-width:1.8;stroke-linejoin:round}
+.award b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,50px);line-height:1}
+.award span{color:var(--silver);font-size:16px}
+.panel .ic{position:absolute;top:26px;left:28px;width:54px;height:54px;fill:none;stroke:var(--silver);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.panel{min-height:230px}
+.panel .ic{width:62px;height:62px;stroke-width:2.4}
+.ticker{--m1:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'%3E%3Ccircle cx='9' cy='11' r='6'/%3E%3Ccircle cx='9' cy='37' r='6'/%3E%3Cpath d='M14 15 L45 33 M14 33 L45 15'/%3E%3C/svg%3E");--m2:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='20' y='18' width='24' height='42' rx='9'/%3E%3Cpath d='M23 18 V10 H41 V18 M26 10 V4 M32 10 V4 M38 10 V4 M27 40 H37 M27 46 H37 M27 52 H37'/%3E%3Ccircle cx='32' cy='29' r='2.5'/%3E%3C/svg%3E")}
+.ticker i{width:36px;height:36px;border-radius:0;background:var(--silver);-webkit-mask:var(--m1) center/contain no-repeat;mask:var(--m1) center/contain no-repeat}
+.ticker i:nth-of-type(even){-webkit-mask-image:var(--m2);mask-image:var(--m2)}
+.nav .btn{margin-left:auto}
+.nav ul{margin:0 auto}
+.burger{display:none;flex:none;width:44px;height:44px;margin-left:10px;background:transparent;border:1px solid var(--line);border-radius:999px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.burger span{display:block;width:18px;height:2px;background:#fff;transition:transform .25s}
+.nav.open .burger span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.nav.open .burger span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media(max-width:859px){
+  .burger{display:flex}
+  .nav ul{position:absolute;left:0;right:0;top:100%;margin:0;background:var(--ink);flex-direction:column;gap:0;padding:6px 22px 16px;border-bottom:1px solid var(--line)}
+  .nav.open ul{display:flex}
+  .nav ul a{display:block;padding:15px 0;font-size:18px;color:var(--white);border-bottom:1px solid var(--line)}
+}
+@media(max-width:420px){.nav .btn{padding:9px 15px;font-size:14px}.mark span{display:none}}
+.fgrid{flex:1 1 100%;display:grid;gap:30px}
+@media(min-width:760px){.fgrid{grid-template-columns:1.2fr 1fr 1fr 1fr}}
+.fgrid h4{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1;margin:0 0 10px;color:var(--white);letter-spacing:.02em}
+.fgrid p{margin:0 0 4px}
+.fgrid a{text-decoration:none;border-bottom:1px solid var(--line)}
+.fgrid a:hover{color:var(--white)}
+.fine{flex:1 1 100%;margin:0;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
+.fab{transition:transform .25s,opacity .3s}
+.fab.hide{opacity:0;pointer-events:none;transform:translateY(12px)}
+@media(max-width:560px){.fab{font-size:0;gap:0;padding:15px}.fab svg{width:26px;height:26px}}
+/* movimento contínuo: logo e tesoura nunca ficam parados */
+.logo .draw{animation:drawLoop 7s ease-in-out .2s infinite}
+.logo .sc{animation:scLoop 7s ease-in-out infinite}
+.logo .lw,.logo .ls,.logo .lb{transform-box:fill-box}
+.logo .lw{animation:wIn 7s ease-out infinite}
+.logo .ls{animation:sIn 7s ease-out infinite}
+.logo .lb{animation:bIn 7s ease-out infinite}
+.logo .bl,.cut .bl{transform-origin:114.5px 40px}
+.cut .bl{transform-origin:21px 15px}
+.logo .bl.a{animation:snipA 2.4s ease-in-out infinite}
+.logo .bl.b{animation:snipB 2.4s ease-in-out infinite}
+.cut .bl.a{animation:snipA 1s ease-in-out infinite}
+.cut .bl.b{animation:snipB 1s ease-in-out infinite}
+.cut::before{animation:cutw2 6s ease-in-out .8s infinite}
+.cut svg{animation:cutx2 6s ease-in-out .8s infinite}
+@keyframes drawLoop{0%{stroke-dashoffset:var(--len);opacity:1}30%{stroke-dashoffset:0;opacity:1}80%{stroke-dashoffset:0;opacity:1}92%{stroke-dashoffset:0;opacity:0}100%{stroke-dashoffset:var(--len);opacity:0}}
+@keyframes scLoop{0%,12%{opacity:0}22%{opacity:1}82%{opacity:1}92%,100%{opacity:0}}
+@keyframes wIn{0%,5%{opacity:0;transform:translateY(16px)}18%{opacity:1;transform:none}82%{opacity:1;transform:none}92%{opacity:0;transform:translateY(-6px)}100%{opacity:0;transform:translateY(16px)}}
+@keyframes sIn{0%,10%{opacity:0;transform:translateY(16px)}23%{opacity:1;transform:none}82%{opacity:1;transform:none}92%{opacity:0;transform:translateY(-6px)}100%{opacity:0;transform:translateY(16px)}}
+@keyframes bIn{0%,20%{opacity:0;letter-spacing:16px}34%{opacity:1;letter-spacing:5px}82%{opacity:1;letter-spacing:5px}92%{opacity:0;letter-spacing:5px}100%{opacity:0;letter-spacing:16px}}
+@keyframes snipA{0%,55%,100%{transform:rotate(0deg)}12%{transform:rotate(10deg)}24%{transform:rotate(0deg)}36%{transform:rotate(10deg)}48%{transform:rotate(0deg)}}
+@keyframes snipB{0%,55%,100%{transform:rotate(0deg)}12%{transform:rotate(-10deg)}24%{transform:rotate(0deg)}36%{transform:rotate(-10deg)}48%{transform:rotate(0deg)}}
+@keyframes cutw2{0%{width:0;opacity:1}62%{width:calc(100% - 30px);opacity:1}86%{width:calc(100% - 30px);opacity:1}96%{width:calc(100% - 30px);opacity:0}100%{width:0;opacity:0}}
+@keyframes cutx2{0%{left:0;opacity:1}62%{left:calc(100% - 34px);opacity:1}86%{left:calc(100% - 34px);opacity:1}96%{left:calc(100% - 34px);opacity:0}100%{left:0;opacity:0}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="mark" href="#topo" aria-label="Barbearia WS, início"><b>WS</b><span>BARBEARIA</span></a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#visita">Onde estamos</a></li>
+    </ul>
+    <a class="btn" href="https://wa.me/5599991301251?text=Ol%C3%A1!%20Quero%20marcar%20um%20hor%C3%A1rio%20na%20Barbearia%20WS." target="_blank" rel="noopener">Marcar horário</a>
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <h1><span class="sr">Barbearia WS: corte preciso, barba alinhada, em Grajaú.</span>
+        <span class="ln" aria-hidden="true"><span>Corte preciso.</span></span>
+        <span class="ln" aria-hidden="true"><span>Barba alinhada.</span></span>
+        <span class="ln" aria-hidden="true"><span>Em Grajaú.</span></span>
+      </h1>
+      <p class="lead">Há 5 anos cuidando do visual de Grajaú. Atendimento de segunda a sábado, com horário marcado pelo WhatsApp.</p>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/5599991301251?text=Ol%C3%A1!%20Quero%20marcar%20um%20hor%C3%A1rio%20na%20Barbearia%20WS." target="_blank" rel="noopener">Marcar pelo WhatsApp</a>
+        <a class="btn ghost" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <svg class="logo" viewBox="0 0 320 290" aria-hidden="true">
+      <path class="draw" d="M122 40 H292 V238" style="--len:420"/>
+      <path class="draw" d="M28 92 V252" style="--len:170"/>
+      <path class="draw" d="M28 252 H150" style="--len:130"/>
+      <g class="sc"><g class="bl a"><circle cx="90" cy="28" r="5.5"/><path d="M94 31 L130 47"/></g><g class="bl b"><circle cx="90" cy="52" r="5.5"/><path d="M94 49 L130 33"/></g><circle cx="114.5" cy="40" r="1.8"/></g>
+      <text class="lw" x="50" y="212" font-family="Bodoni Moda,Didot,Times New Roman,serif" font-size="160" font-weight="700">W</text>
+      <text class="ls" x="172" y="226" font-family="Bodoni Moda,Didot,Times New Roman,serif" font-size="160" font-weight="700">S</text>
+      <text class="lb" x="130" y="192" font-family="Montserrat,Arial,sans-serif" font-size="11" letter-spacing="5" font-weight="500">BARBEARIA</text>
+    </svg>
+  </div>
+  <div class="wrap"><div class="cut" aria-hidden="true">
+    <svg viewBox="0 0 34 30"><g class="bl a"><circle cx="6" cy="6.5" r="4.2"/><path d="M9.2 9.2 L33 21"/></g><g class="bl b"><circle cx="6" cy="23.5" r="4.2"/><path d="M9.2 20.8 L33 9"/></g><circle cx="21" cy="15" r="1.2"/></svg>
+  </div></div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div>
+    <span>Corte</span><i></i><span class="o">Barba</span><i></i><span>Degradê</span><i></i><span class="o">Acabamento na navalha</span><i></i>
+    <span>Corte</span><i></i><span class="o">Barba</span><i></i><span>Degradê</span><i></i><span class="o">Acabamento na navalha</span><i></i>
+  </div>
+</div>
+
+<section class="paper" id="numeros">
+  <div class="wrap">
+    <h2 data-r>Cinco anos cuidando do seu visual.</h2>
+    <div class="award" data-r>
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 L29.5 18 L43 19 L33 28 L36 42 L24 35 L12 42 L15 28 L5 19 L18.5 18 Z"/></svg>
+      <div><b>Melhor barbeiro da cidade</b><span>Título conquistado em Grajaú</span></div>
+    </div>
+    <div class="stats">
+      <div class="stat" data-r><b data-to="5">5</b><span>anos de barbearia em Grajaú</span></div>
+      <div class="stat" data-r><b data-to="6">6</b><span>dias de atendimento por semana</span></div>
+      <div class="stat" data-r><b data-to="12" data-suf="h">12h</b><span>de portas abertas por dia, das 8h às 20h</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2 data-r>Serviços</h2>
+    <p class="sub" data-r>Escolha o seu e chame no WhatsApp para garantir o horário.</p>
+    <div class="panels" data-r>
+      <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="19" cy="50" rx="8" ry="9"/><ellipse cx="45" cy="50" rx="8" ry="9"/><path d="M23 42 L30 34 M41 42 L34 34 M30 34 L19 6 L16 7 L28 36 M34 34 L45 6 L48 7 L36 36"/><circle cx="32" cy="35" r="1.6"/></svg><h3>Corte de cabelo</h3><p>Degradê, social ou o estilo que você trouxer de referência.</p></div>
+      <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="40" width="28" height="10" rx="5"/><path d="M33 43 L57 12 L61 16 C58 24 44 40 38 48"/><circle cx="34" cy="45" r="2"/><path d="M12 45 H26"/></svg><h3>Barba</h3><p>Alinhamento e acabamento limpo, na navalha.</p></div>
+      <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="18" width="24" height="42" rx="9"/><path d="M23 18 V10 H41 V18 M26 10 V4 M32 10 V4 M38 10 V4 M27 40 H37 M27 46 H37 M27 52 H37"/><circle cx="32" cy="29" r="2.5"/></svg><h3>Corte e barba</h3><p>Os dois serviços no mesmo horário, para você sair pronto.</p></div>
+    </div>
+    <p class="note">Consulte os valores pelo WhatsApp.</p>
+  </div>
+</section>
+
+<section id="diferenciais" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-r>Por que a WS</h2>
+    <ul class="list" data-r>
+      <li>Barbeiro eleito o melhor da cidade</li>
+      
+      <li>Atendimento de segunda a sábado</li>
+      <li>Horário marcado pelo WhatsApp</li>
+    </ul>
+  </div>
+</section>
+
+<section class="paper" id="visita">
+  <div class="wrap visit">
+    <div data-r>
+      <h2>Venha conhecer</h2>
+      <p class="addr">Grajaú, Maranhão</p>
+      <p class="muted">Código no Google Maps: 5R7Q+4J</p>
+      <div class="row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Barbearia+WS+Graja%C3%BA+MA" target="_blank" rel="noopener">Como chegar</a>
+        <a class="btn ghost" href="https://www.instagram.com/wemerson.sousasilva/" target="_blank" rel="noopener">Ver o Instagram</a>
+      </div>
+    </div>
+    <div data-r>
+      <h2 style="font-size:clamp(38px,5vw,54px)">Horário de atendimento</h2>
+      <table class="hours">
+        <tr><td>Segunda a sábado</td><td>8h às 20h</td></tr>
+        <tr><td>Domingo</td><td>Fechado</td></tr>
+      </table>
+      <p class="muted">WhatsApp e telefone: (99) 99130-1251</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>WS Barbearia</h4><p>Corte e barba em Grajaú, Maranhão.</p></div>
+      <div><h4>Endereço</h4><p>Grajaú, Maranhão</p><p>Código no Google Maps: 5R7Q+4J</p><p><a href="https://www.google.com/maps/search/?api=1&query=Barbearia+WS+Graja%C3%BA+MA" target="_blank" rel="noopener">Como chegar</a></p></div>
+      <div><h4>Horários</h4><p>Segunda a sábado: 8h às 20h</p><p>Domingo: fechado</p></div>
+      <div><h4>Contato</h4><p><a href="https://wa.me/5599991301251" target="_blank" rel="noopener">WhatsApp (99) 99130-1251</a></p><p><a href="https://www.instagram.com/wemerson.sousasilva/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+    <p class="fine">WS Barbearia, Grajaú – MA. Página de demonstração.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5599991301251?text=Ol%C3%A1!%20Quero%20marcar%20um%20hor%C3%A1rio%20na%20Barbearia%20WS." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-.9.8c-.9-.4-1.9-1.4-2.3-2.3l.8-.9-1-2z"/></svg>
+  WhatsApp
+</a>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'),bg=document.querySelector('.burger');
+  bg.addEventListener('click',function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Fechar menu':'Abrir menu')});
+  [].forEach.call(document.querySelectorAll('.nav ul a'),function(a){a.addEventListener('click',function(){nav.classList.remove('open');bg.setAttribute('aria-expanded',false)})});
+  var ft=document.querySelector('footer'),fab=document.querySelector('.fab');
+  if('IntersectionObserver' in window&&ft&&fab){new IntersectionObserver(function(es){fab.classList.toggle('hide',es[0].isIntersecting)},{threshold:.05}).observe(ft)}
+  var hero=document.querySelector('.hero'),seen=true;
+  if('IntersectionObserver' in window&&hero){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!seen){[].forEach.call(hero.querySelectorAll('.ln>span'),function(s){s.style.animation='none';void s.offsetWidth;s.style.animation=''})}seen=v},{threshold:.35}).observe(hero)}
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=[].slice.call(document.querySelectorAll('[data-r]'));
+  function count(b){
+    var to=parseFloat(b.dataset.to),dec=parseInt(b.dataset.dec||0,10),suf=b.dataset.suf||'';
+    function fmt(v){return v.toFixed(dec).replace('.',',')+suf}
+    if(rm){b.textContent=fmt(to);return}
+    var t0=null;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1),e=1-Math.pow(1-p,3);b.textContent=fmt(to*e);if(p<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  }
+  function show(el){el.classList.add('on');[].forEach.call(el.querySelectorAll('[data-to]'),count)}
+  if(!('IntersectionObserver' in window)){els.forEach(show);return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.18});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
