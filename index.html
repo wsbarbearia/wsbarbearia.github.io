@@ -213,6 +213,16 @@ h2{font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:.01em}
 @keyframes snipB{0%,55%,100%{transform:rotate(0deg)}12%{transform:rotate(-10deg)}24%{transform:rotate(0deg)}36%{transform:rotate(-10deg)}48%{transform:rotate(0deg)}}
 @keyframes cutw2{0%{width:0;opacity:1}62%{width:calc(100% - 30px);opacity:1}86%{width:calc(100% - 30px);opacity:1}96%{width:calc(100% - 30px);opacity:0}100%{width:0;opacity:0}}
 @keyframes cutx2{0%{left:0;opacity:1}62%{left:calc(100% - 34px);opacity:1}86%{left:calc(100% - 34px);opacity:1}96%{left:calc(100% - 34px);opacity:0}100%{left:0;opacity:0}}
+@media(min-width:860px){.panels{display:grid;grid-template-columns:repeat(3,1fr);height:auto}.panel{min-height:260px}.panels:hover .panel,.panels .panel:hover{flex:none}}
+.prods{display:grid;gap:14px}
+@media(min-width:760px){.prods{grid-template-columns:1fr 1fr}}
+.prod{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#1B1D21,#131416)}
+.pimg{aspect-ratio:4/3;background:#17181B center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.pimg svg{width:84px;height:84px;fill:none;stroke:var(--silver);stroke-width:2;opacity:.5;stroke-linecap:round;stroke-linejoin:round}
+.pbody{padding:22px 24px 26px}
+.pbody h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,44px);line-height:1;margin:0 0 6px}
+.pbody p{margin:0 0 18px;color:var(--silver)}
+.pimg svg.scene{width:100%;height:100%;opacity:1;stroke-width:1.6}
 </style>
 </head>
 <body>
@@ -223,6 +233,7 @@ h2{font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:.01em}
     <a class="mark" href="#topo" aria-label="Barbearia WS, início"><b>WS</b><span>BARBEARIA</span></a>
     <ul>
       <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#produtos">Produtos</a></li>
       <li><a href="#diferenciais">Diferenciais</a></li>
       <li><a href="#visita">Onde estamos</a></li>
     </ul>
@@ -290,8 +301,27 @@ h2{font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:.01em}
       <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="19" cy="50" rx="8" ry="9"/><ellipse cx="45" cy="50" rx="8" ry="9"/><path d="M23 42 L30 34 M41 42 L34 34 M30 34 L19 6 L16 7 L28 36 M34 34 L45 6 L48 7 L36 36"/><circle cx="32" cy="35" r="1.6"/></svg><h3>Corte de cabelo</h3><p>Degradê, social ou o estilo que você trouxer de referência.</p></div>
       <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="40" width="28" height="10" rx="5"/><path d="M33 43 L57 12 L61 16 C58 24 44 40 38 48"/><circle cx="34" cy="45" r="2"/><path d="M12 45 H26"/></svg><h3>Barba</h3><p>Alinhamento e acabamento limpo, na navalha.</p></div>
       <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="20" y="18" width="24" height="42" rx="9"/><path d="M23 18 V10 H41 V18 M26 10 V4 M32 10 V4 M38 10 V4 M27 40 H37 M27 46 H37 M27 52 H37"/><circle cx="32" cy="29" r="2.5"/></svg><h3>Corte e barba</h3><p>Os dois serviços no mesmo horário, para você sair pronto.</p></div>
+      <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 22 C14 8 22 36 32 22 S50 8 58 22"/><path d="M6 44 H58"/></svg><h3>Alisamento</h3><p>Consulte o serviço e o valor pelo WhatsApp.</p></div>
+      <div class="panel"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L37 26 L58 32 L37 38 L32 58 L27 38 L6 32 L27 26 Z"/></svg><h3>Luzes</h3><p>Consulte o serviço e o valor pelo WhatsApp.</p></div>
     </div>
     <p class="note">Consulte os valores pelo WhatsApp.</p>
+  </div>
+</section>
+
+<section id="produtos" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-r>Produtos</h2>
+    <p class="sub" data-r>Produtos para cabelo e para a barba crescer. Peça pelo WhatsApp.</p>
+    <div class="prods" data-r>
+      <div class="prod">
+        <div class="pimg"><svg class="scene" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="gh" x1="0" x2="1"><stop offset="0" stop-color="#2A2D31"/><stop offset=".45" stop-color="#52565D"/><stop offset="1" stop-color="#24272B"/></linearGradient></defs><ellipse cx="200" cy="264" rx="160" ry="9" fill="#000" opacity=".4" stroke="none"/><rect x="92" y="98" width="84" height="164" rx="16" fill="url(#gh)"/><rect x="124" y="80" width="20" height="18" fill="url(#gh)"/><rect x="116" y="60" width="36" height="20" rx="5" fill="url(#gh)"/><path d="M152 68 H182 V76"/><rect x="104" y="140" width="60" height="74" rx="6"/><path d="M114 160 H154 M114 174 H146 M114 188 H150" opacity=".5"/><rect x="214" y="206" width="112" height="56" rx="9" fill="url(#gh)"/><rect x="210" y="184" width="120" height="26" rx="8" fill="url(#gh)"/><path d="M224 234 H316" opacity=".5"/><path d="M104 108 V250" stroke="#fff" opacity=".18"/></svg></div>
+        <div class="pbody"><h3>Produtos para cabelo</h3><p>Consulte os produtos e os valores.</p><a class="btn" href="https://wa.me/5599991301251?text=Ol%C3%A1!%20Quero%20saber%20sobre%20os%20produtos%20para%20cabelo." target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div>
+      </div>
+      <div class="prod">
+        <div class="pimg"><svg class="scene" viewBox="0 0 400 300" aria-hidden="true"><defs><linearGradient id="gb" x1="0" x2="1"><stop offset="0" stop-color="#2A2D31"/><stop offset=".45" stop-color="#52565D"/><stop offset="1" stop-color="#24272B"/></linearGradient></defs><ellipse cx="200" cy="264" rx="170" ry="9" fill="#000" opacity=".4" stroke="none"/><rect x="108" y="134" width="74" height="128" rx="14" fill="url(#gb)"/><rect x="130" y="112" width="30" height="24" fill="url(#gb)"/><rect x="124" y="100" width="42" height="14" rx="3" fill="url(#gb)"/><path d="M132 100 V78 Q145 52 158 78 V100 Z" fill="url(#gb)"/><rect x="118" y="172" width="54" height="62" rx="5"/><path d="M126 192 H164 M126 206 H156" opacity=".5"/><rect x="206" y="212" width="106" height="50" rx="9" fill="url(#gb)"/><rect x="202" y="190" width="114" height="26" rx="8" fill="url(#gb)"/><path d="M216 238 H302" opacity=".5"/><rect x="326" y="218" width="58" height="14" rx="3" fill="url(#gb)"/><path d="M334 232 V250 M343 232 V250 M352 232 V250 M361 232 V250 M370 232 V250 M378 232 V250"/><path d="M118 142 V252" stroke="#fff" opacity=".18"/></svg></div>
+        <div class="pbody"><h3>Para a barba crescer</h3><p>Consulte os produtos e os valores.</p><a class="btn" href="https://wa.me/5599991301251?text=Ol%C3%A1!%20Quero%20saber%20sobre%20os%20produtos%20para%20a%20barba%20crescer." target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div>
+      </div>
+    </div>
   </div>
 </section>
 
